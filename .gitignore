@@ -1,0 +1,5 @@
+db.sqlite3
+.idea
+main/migrations
+main/__pycache__
+bank_api/__pycache__/
