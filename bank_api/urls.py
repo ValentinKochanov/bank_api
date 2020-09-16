@@ -6,17 +6,17 @@ from main.views import (CustomerViewSet,
                         AccountViewSet,
                         AccountBalance,
                         ReplenishmentView,
-                        OutlayView,)
+                        OutlayView)
 
 
 router = routers.DefaultRouter()
-router.register(r'customer', CustomerViewSet)
-router.register(r'account', AccountViewSet)
+router.register(r'customers', CustomerViewSet)
+router.register(r'accounts', AccountViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('account/balance/', AccountBalance.as_view()),
-    path('account/replenishment/', ReplenishmentView.as_view()),
-    path('account/outlay/', OutlayView.as_view()),
+    path('accounts/balance/', AccountBalance.as_view(), name='balance'),
+    path('accounts/replenishment/', ReplenishmentView.as_view(), name='replenishment'),
+    path('accounts/outlay/', OutlayView.as_view(), name='outlay'),
     path('', include(router.urls))
 ]
